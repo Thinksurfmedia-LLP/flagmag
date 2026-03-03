@@ -51,6 +51,15 @@ onloadmethod();
 
 
 
+    // window.addEventListener("scroll", function() {
+    //     let scrollY = window.scrollY;
+    //     let rotateValue = scrollY * 0.3; // adjust speed here
+    //     document.querySelector(".build-bg img").style.transform =
+    //         "rotate(" + rotateValue + "deg)";
+    // });
+
+
+
 
 
 });
@@ -67,7 +76,7 @@ function onloadmethod(){
 }
 
 
-
+AOS.init();
 
 
 
@@ -94,10 +103,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+// Smooth Scrolling animation Start -----------------
+
+let currentRotation = 0;
+let targetRotation = 0;
+let ease = 0.08; // smaller = smoother
+
+window.addEventListener("scroll", function() {
+    let scrollY = window.scrollY;
+    targetRotation = scrollY * 0.3;
+});
+
+function animate() {
+    currentRotation += (targetRotation - currentRotation) * ease;
+
+    document.querySelector(".build-bg img").style.transform =
+        "rotate(" + currentRotation + "deg)";
+
+    requestAnimationFrame(animate);
+}
+
+animate();
 
 
-
-
+// Smooth Scrolling animation End -----------------
 
 
 
