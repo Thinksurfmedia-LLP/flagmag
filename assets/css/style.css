@@ -1608,6 +1608,109 @@ header.for-homepage {
 .leagues-section .leagues-filter-area .form-select {
   width: auto;
 }
+.leagues-section .location-item-wrapper {
+  counter-reset: item;
+}
+.leagues-section .location-item-wrapper .location-item::before {
+  counter-increment: item;
+  content: counter(item) "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: "Cros", sans-serif;
+  font-size: 300px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(170deg, rgb(70, 70, 70) 30%, rgb(29, 29, 29) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #464646;
+}
+.leagues-section .location-item {
+  padding: 30px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgb(49, 49, 49) 0%, rgb(6, 6, 6) 100%);
+  border: 1px solid rgb(49, 49, 49);
+  margin-bottom: 40px;
+  position: relative;
+}
+.leagues-section .location-item .map-area img {
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+.leagues-section .location-item .map-content-area h3 {
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.leagues-section .location-item .map-content-area ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.leagues-section .location-item .map-content-area ul li {
+  width: calc(46% - 20px);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 15px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0;
+}
+.leagues-section .location-item .gallery-area .item img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.leagues-section .location-item .gallery-area .owl-carousel .owl-nav button.owl-prev {
+  left: -2%;
+}
+.leagues-section .location-item .gallery-area .owl-carousel .owl-nav button.owl-next {
+  right: -2%;
+}
+.leagues-section .location-item .gallery-area h5 {
+  margin-bottom: 20px;
+}
+.leagues-section .media-item img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.players-stats-heading-area {
+  margin: 0 0 20px;
+}
+.players-stats-heading-area .team-nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.players-stats-heading-area .team-nav li {
+  font-size: 14px;
+}
+.players-stats-heading-area .team-nav li a {
+  color: #fff;
+  padding: 5px 15px;
+  min-width: 100px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3019607843);
+  border-radius: 26px;
+  display: inline-block;
+}
+.players-stats-heading-area .team-nav li.active a, .players-stats-heading-area .team-nav li:hover a {
+  color: #fff;
+  background-color: #8D1100;
+  border-color: #ab0000;
+  transition: 0.3s;
+}
+.players-stats-heading-area .dropdown .btn-info-primary {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
 
 .venues-section {
   background: linear-gradient(180deg, rgb(46, 24, 21) 0%, rgb(11, 13, 19) 35%);
@@ -1859,6 +1962,40 @@ header.for-homepage {
 .table tr td:not(:first-child) {
   text-align: center;
   vertical-align: middle;
+}
+
+.players-stats {
+  overflow: hidden;
+  border-radius: 10px;
+}
+.players-stats .table-wrap {
+  padding: 0;
+  border-radius: 0;
+  overflow: auto;
+}
+.players-stats .table-wrap table {
+  margin: 0;
+}
+.players-stats .table-wrap table tr th, .players-stats .table-wrap table tr td {
+  text-transform: uppercase;
+  font-family: "Cros", sans-serif;
+  letter-spacing: 1.4px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+.players-stats .table-wrap table tr th {
+  background-color: rgb(40, 43, 44);
+}
+.players-stats .table-wrap table tr td {
+  color: #fff;
+}
+.players-stats .table-wrap table tr td a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .game-record-area .heading-area {
@@ -2533,6 +2670,9 @@ footer .copyright-area p {
   .heading-part h2 {
     font-size: 3rem;
   }
+  .map-content-area {
+    margin-top: 30px;
+  }
 }
 @media all and (max-width: 767px) {
   .container {
@@ -2600,6 +2740,9 @@ footer .copyright-area p {
   .login-register-section .image-area {
     min-height: 500px;
     margin-top: 30px;
+  }
+  .leagues-section .location-item .map-content-area ul li {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -2722,6 +2865,13 @@ footer .copyright-area p {
   .build-section .image-area {
     margin-top: 30px;
   }
+  .build-section .image-area > img {
+    padding: 50px 0;
+    position: relative;
+  }
+  .build-section .image-area .build-bg {
+    position: absolute;
+  }
   .build-section .video-wrapper {
     margin-top: 35px;
   }
@@ -2791,6 +2941,15 @@ footer .copyright-area p {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 15px 0 30px;
+  }
+  .players-stats .table-wrap table tr th, .players-stats .table-wrap table tr td {
+    font-size: 14px;
+  }
+  .players-stats .table-wrap table tr td img {
+    margin: 0;
+  }
+  .players-stats .table-wrap table tr td:nth-child(1) img {
+    margin-bottom: 7px;
   }
   .leagues-section .leagues-nav {
     gap: 10px;
